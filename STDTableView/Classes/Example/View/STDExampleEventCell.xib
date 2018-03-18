@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="default" indentationWidth="10" rowHeight="52" id="ZcB-OP-PIJ" customClass="STDExampleEventCell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="52"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ZcB-OP-PIJ" id="6cl-Cg-VH1">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="51.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6EV-DX-kna" userLabel="stateView">
+                        <rect key="frame" x="0.0" y="0.0" width="0.0" height="51.5"/>
+                        <color key="backgroundColor" red="0.16078431369999999" green="0.70588235290000001" blue="0.99607843139999996" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="width" id="n5e-Bd-I0Y"/>
+                        </constraints>
+                    </view>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="产品名称" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2hr-Kq-w7g" userLabel="titleLabel">
+                        <rect key="frame" x="8" y="11" width="57.5" height="30"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <color key="textColor" red="0.43529412150000002" green="0.4431372583" blue="0.47450980539999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AI6-1r-BTM" userLabel="editContentView">
+                        <rect key="frame" x="80.5" y="0.0" width="224.5" height="51.5"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="选单位" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6mS-eq-384" userLabel="Picker Text Field">
+                                <rect key="frame" x="0.0" y="0.0" width="224.5" height="51.5"/>
+                                <color key="textColor" red="0.43529412150000002" green="0.4431372583" blue="0.47450980539999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="done"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="6mS-eq-384" secondAttribute="trailing" id="CLx-PS-p29"/>
+                            <constraint firstItem="6mS-eq-384" firstAttribute="top" secondItem="AI6-1r-BTM" secondAttribute="top" id="HQA-yY-Q9w"/>
+                            <constraint firstItem="6mS-eq-384" firstAttribute="leading" secondItem="AI6-1r-BTM" secondAttribute="leading" id="QpC-o6-ekA"/>
+                            <constraint firstAttribute="bottom" secondItem="6mS-eq-384" secondAttribute="bottom" id="kqx-gJ-aGu"/>
+                        </constraints>
+                    </view>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="u5l-Ja-TaJ">
+                        <rect key="frame" x="0.0" y="50.5" width="320" height="1"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="1" id="0hQ-D8-31u"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="bottom" secondItem="6EV-DX-kna" secondAttribute="bottom" id="6w9-qp-q0z"/>
+                    <constraint firstItem="AI6-1r-BTM" firstAttribute="top" secondItem="6cl-Cg-VH1" secondAttribute="top" id="Gip-1s-uIW"/>
+                    <constraint firstItem="6EV-DX-kna" firstAttribute="leading" secondItem="6cl-Cg-VH1" secondAttribute="leading" id="TJM-Qj-ZgR"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="2hr-Kq-w7g" secondAttribute="bottom" id="Tzq-3X-ySe"/>
+                    <constraint firstItem="2hr-Kq-w7g" firstAttribute="top" secondItem="6cl-Cg-VH1" secondAttribute="topMargin" id="Zee-0q-UWu"/>
+                    <constraint firstItem="6EV-DX-kna" firstAttribute="top" secondItem="6cl-Cg-VH1" secondAttribute="top" id="dJ3-vD-lBz"/>
+                    <constraint firstItem="AI6-1r-BTM" firstAttribute="leading" secondItem="2hr-Kq-w7g" secondAttribute="trailing" constant="15" id="gPX-QD-73P"/>
+                    <constraint firstAttribute="trailing" secondItem="u5l-Ja-TaJ" secondAttribute="trailing" id="meQ-GI-PID"/>
+                    <constraint firstAttribute="bottom" secondItem="AI6-1r-BTM" secondAttribute="bottom" id="qGR-r0-1Xg"/>
+                    <constraint firstItem="u5l-Ja-TaJ" firstAttribute="leading" secondItem="6cl-Cg-VH1" secondAttribute="leading" id="rE4-1y-b33"/>
+                    <constraint firstAttribute="trailing" secondItem="AI6-1r-BTM" secondAttribute="trailing" constant="15" id="tl0-QF-n9d"/>
+                    <constraint firstItem="2hr-Kq-w7g" firstAttribute="leading" secondItem="6EV-DX-kna" secondAttribute="trailing" constant="8" id="vT9-Ys-mdM"/>
+                    <constraint firstAttribute="bottom" secondItem="u5l-Ja-TaJ" secondAttribute="bottom" id="yEI-1g-MSc"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="stateViewWidthConstraint" destination="n5e-Bd-I0Y" id="1FS-Bp-4ez"/>
+                <outlet property="textField" destination="6mS-eq-384" id="yAA-Ho-WoO"/>
+                <outlet property="titleLabel" destination="2hr-Kq-w7g" id="P2g-C8-K97"/>
+            </connections>
+            <point key="canvasLocation" x="20" y="-100"/>
+        </tableViewCell>
+    </objects>
+</document>
