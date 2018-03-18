@@ -1,4 +1,4 @@
-# STDPickerView
+# STDTableView
 
 [![Version](https://img.shields.io/cocoapods/v/STDTableView.svg?style=flat)](http://cocoapods.org/pods/STDTableView)
 [![License](https://img.shields.io/cocoapods/l/STDTableView.svg?style=flat)](http://cocoapods.org/pods/STDTableView)
