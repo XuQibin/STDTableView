@@ -28,14 +28,14 @@
 
 - (void)setupTableView
 {
-    _tableView = [UITableView tableViewWithFrame:CGRectZero style:UITableViewStylePlain];
+    _tableView = [UITableView std_tableViewWithFrame:CGRectZero style:UITableViewStylePlain];
     
     _tableView.delegate = self;
     
     _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     _tableView.tableFooterView = [[UIView alloc]init];
     
-    _tableView.viewController = self;
+    _tableView.std_viewController = self;
     
     [self configTableView:_tableView];
     

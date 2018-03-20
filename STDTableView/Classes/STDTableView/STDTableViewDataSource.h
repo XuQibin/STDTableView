@@ -27,6 +27,7 @@
 - (void)removeAllItemAtSection:(NSUInteger)section;
 - (NSInteger)itemsCountAtSection:(NSUInteger)section;
 
+- (NSArray<STDTableViewSection *> *)allSections;
 - (STDTableViewSection *)sectionAtIndex:(NSUInteger)index;
 - (void)addSection:(STDTableViewSection *)section;
 - (void)addSections:(NSArray<STDTableViewSection *> *)sections;

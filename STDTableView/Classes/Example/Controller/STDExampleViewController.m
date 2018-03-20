@@ -34,12 +34,12 @@
 {
     tableView.rowHeight = 55;
 
-    [tableView registerCellNibClass:[STDExampleListCell class]];
+    [tableView std_registerCellNibClass:[STDExampleListCell class]];
     
-    [tableView creatDataSource];
+    [tableView std_creatDataSource];
     
     STDTableViewSection *sectionData = [[STDTableViewSection alloc] initWithCellClass:[STDExampleListCell class]];
-    [tableView addSection:sectionData];
+    [tableView std_addSection:sectionData];
 }
 
 - (void)setupExampleContent
@@ -48,9 +48,9 @@
                           [STDExampleListItem itemWithTitle:@"2. Cell事件响应" subTitle:nil object:[STDExampleCellEventViewController class]],
                           [STDExampleListItem itemWithTitle:@"3. 混合Cell" subTitle:nil object:[STDExampleMixCellsViewController class]]];
     
-    [self.tableView addItems:itemList atSection:0];
+    [self.tableView std_addItems:itemList atSection:0];
     
-    [self.tableView insertRows:itemList.count atEmptySection:0 withRowAnimation:UITableViewRowAnimationFade];
+    [self.tableView std_insertRows:itemList.count atEmptySection:0 withRowAnimation:UITableViewRowAnimationFade];
 }
 
 #pragma mark - UITableViewDelegate
@@ -58,7 +58,7 @@
 {
     [tableView deselectRowAtIndexPath:indexPath animated:NO];
     
-    [tableView cellSelectedCallbackWithIndexPath:indexPath];
+    [tableView std_cellSelectedCallbackWithIndexPath:indexPath];
 }
 
 - (void)didReceiveMemoryWarning {

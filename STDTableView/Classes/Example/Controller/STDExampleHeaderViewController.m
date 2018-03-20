@@ -29,10 +29,10 @@
 {
     tableView.rowHeight = 55;
     
-    [tableView registerCellClass:[STDExampleHeaderCell class]];
-    [tableView registerHeaderFooterViewClass:[STDExampleHeaderView class]];
+    [tableView std_registerCellClass:[STDExampleHeaderCell class]];
+    [tableView std_registerHeaderFooterViewClass:[STDExampleHeaderView class]];
     
-    tableView.headerFooterViewDelegate = self;
+    tableView.std_headerFooterViewDelegate = self;
 }
 
 - (void)setupExampleContent
@@ -46,10 +46,10 @@
         
         STDTableViewSection *sectionData = [[STDTableViewSection alloc] initWithItems:items cellClass:[STDExampleHeaderCell class] headerClass:[STDExampleHeaderView class] headerData:[NSString stringWithFormat:@"Section-%zd", section] headerHeight:44];
         sectionData.expend = NO;
-        [self.tableView addSection:sectionData];
+        [self.tableView std_addSection:sectionData];
     }
     
-    [self.tableView insertSectionsAtEmptyTableView:5 withRowAnimation:UITableViewRowAnimationFade];
+    [self.tableView std_insertSectionsAtEmptyTableView:5 withRowAnimation:UITableViewRowAnimationFade];
     
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         [self tableViewHeaderFooterView:(STDExampleHeaderView *)[self.tableView headerViewForSection:0] event:nil];
@@ -61,7 +61,7 @@
 {
     [tableView deselectRowAtIndexPath:indexPath animated:NO];
     
-    [tableView cellSelectedCallbackWithIndexPath:indexPath];
+    [tableView std_cellSelectedCallbackWithIndexPath:indexPath];
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
@@ -78,19 +78,19 @@
 - (void)tableViewHeaderFooterView:(STDExampleHeaderView *)headerFooterView event:(id)event
 {
     NSInteger section = headerFooterView.section;
-    STDTableViewSection *sectionData = [self.tableView sectionAtIndex:section];
+    STDTableViewSection *sectionData = [self.tableView std_sectionAtIndex:section];
     
     if (sectionData.expend == YES) {
         // 缩回去
         sectionData.expend = NO;
         
-        [self.tableView deleteAllRowsAtSection:section withRowAnimation: UITableViewRowAnimationFade];
+        [self.tableView std_deleteAllRowsAtSection:section withRowAnimation: UITableViewRowAnimationFade];
     } else {
         
         // 显示出来
         sectionData.expend = YES;
         
-        [self.tableView insertRows:sectionData.itemsCount atEmptySection:section withRowAnimation:UITableViewRowAnimationFade];
+        [self.tableView std_insertRows:sectionData.itemsCount atEmptySection:section withRowAnimation:UITableViewRowAnimationFade];
     }
     
     [headerFooterView animationExpand:sectionData.expend];

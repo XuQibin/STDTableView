@@ -194,6 +194,11 @@
     [self.sections insertObject:section atIndex:index];
 }
 
+- (NSArray<STDTableViewSection *> *)allSections
+{
+    return self.sections;
+}
+
 - (STDTableViewSection *)sectionAtIndex:(NSUInteger)index
 {
     NSAssert(self.sections.count > index, @"section index '%zd' out of range '0 ~ %zd'", index, self.sections.count - 1);

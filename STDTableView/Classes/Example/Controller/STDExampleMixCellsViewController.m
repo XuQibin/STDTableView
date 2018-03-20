@@ -29,11 +29,11 @@
 {
     tableView.backgroundColor = kTableViewBackgroundColor;
 
-    [tableView registerCellNibClass:[STDExampleImageCell class]];
-    [tableView registerCellClass:[STDExampleHeaderCell class]];
+    [tableView std_registerCellNibClass:[STDExampleImageCell class]];
+    [tableView std_registerCellClass:[STDExampleHeaderCell class]];
     
     STDTableViewSection *sectionData = [[STDTableViewSection alloc] initWithCellClass:[STDExampleHeaderCell class]];
-    [tableView addSection:sectionData];
+    [tableView std_addSection:sectionData];
 }
 
 - (void)setupExampleContent
@@ -42,15 +42,15 @@
                           [STDExampleHeaderCell cellItemWithData:@"关于" cellHeight:55],
                           [STDExampleHeaderCell cellItemWithData:@"设置" cellHeight:55]];
     
-    [self.tableView addItems:itemList atSection:0];
+    [self.tableView std_addItems:itemList atSection:0];
     
-    [self.tableView insertRows:itemList.count atEmptySection:0 withRowAnimation:UITableViewRowAnimationFade];
+    [self.tableView std_insertRows:itemList.count atEmptySection:0 withRowAnimation:UITableViewRowAnimationFade];
 }
 
 #pragma mark - UITableViewDelegate
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    STDTableViewItem *item = [tableView itemAtIndexPath:indexPath];
+    STDTableViewItem *item = [tableView std_itemAtIndexPath:indexPath];
     
     return item.cellHeight;
 }

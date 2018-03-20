@@ -30,12 +30,12 @@
     
     tableView.backgroundColor = kTableViewBackgroundColor;
     
-    tableView.cellDelegate = self;
+    tableView.std_cellDelegate = self;
 
-    [tableView registerCellNibClass:[STDExampleEventCell class]];
+    [tableView std_registerCellNibClass:[STDExampleEventCell class]];
     
     STDTableViewSection *sectionData = [[STDTableViewSection alloc] initWithCellClass:[STDExampleEventCell class]];
-    [self.tableView addSection:sectionData];
+    [self.tableView std_addSection:sectionData];
 }
 
 - (void)setupExampleContent
@@ -43,9 +43,9 @@
     NSArray *itemList = @[[STDExampleEventItem itemWithTitle:@"姓名" placeholder:@"请输入姓名"],
                           [STDExampleEventItem itemWithTitle:@"职位" placeholder:@"请输入职位"]];
     
-    [self.tableView addItems:itemList atSection:0];
+    [self.tableView std_addItems:itemList atSection:0];
     
-    [self.tableView insertRows:itemList.count atEmptySection:0 withRowAnimation:UITableViewRowAnimationFade];
+    [self.tableView std_insertRows:itemList.count atEmptySection:0 withRowAnimation:UITableViewRowAnimationFade];
 }
 
 #pragma mark - UITableViewDelegate
@@ -53,7 +53,7 @@
 {
     [tableView deselectRowAtIndexPath:indexPath animated:NO];
     
-    [tableView cellSelectedCallbackWithIndexPath:indexPath];
+    [tableView std_cellSelectedCallbackWithIndexPath:indexPath];
 }
 
 #pragma mark - STDTableViewCellDelegate
